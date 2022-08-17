@@ -2,12 +2,14 @@
 
 import type { NextPage } from 'next'
 
-import Layout from '../components/layout/layout.component'
+import Layout from '../components/ui/layout/layout.component'
 import NftList from '../components/nft/list/list'
 import nfts from "../content/meta.json"
 import { NftMetaData } from '../types/nft'
+import { useWeb3 } from '../components/provider/web3/web3'
 
 const Home: NextPage = () => {
+  const data = useWeb3()
   return (
     <Layout>
       <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
