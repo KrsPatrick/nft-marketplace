@@ -2,6 +2,7 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
+import { useAccount } from '../../hooks/web3/useAccounts'
 import ActiveLink from '../link/link.components'
 
 const navigation = [
@@ -14,6 +15,10 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+  const {data} = useAccount("some params")
+
+  console.log(data);
+  
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
